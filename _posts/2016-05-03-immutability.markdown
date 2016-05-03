@@ -77,7 +77,7 @@ This object does not change its state after it was created and thus can be consi
 Now let's check a case of money transfer where lack of immutability leads to wrong result.
 We have `Money` class to represent a certain amount of money.
 
-{% highlight php linenos startinline=true %}
+{% highlight php startinline=true %}
 class Money 
 {
     private $amount;
@@ -97,7 +97,7 @@ class Money
 
 We use it the following way:
 
-{% highlight php linenos startinline=true %}
+{% highlight php startinline=true %}
 $userAmount = Money::USD(2);
 /**
  * Mark is going to send 2 USD to Alex. Since there's comission of 3%
@@ -123,7 +123,7 @@ would be to use Immutable Object.
 
 Instead of modifying existing object either new object should be created or existing one should be copied. Let's modify code above to create another object:
 
-{% highlight php linenos startinline=true %}
+{% highlight php startinline=true %}
 final class Money 
 {
     private $amount;
@@ -135,7 +135,7 @@ final class Money
 }
 {% endhighlight %}
 
-{% highlight php linenos startinline=true %}
+{% highlight php startinline=true %}
 $userAmount = Money::USD(2);
 $commission = $userAmount->val() * 3 / 100;
 $processedAmount = Money::USD($userAmount->getAmount() + $commission);
@@ -146,7 +146,7 @@ $alexCard->deposit($userAmount);
 The approach is OK for simple objects but if initialization is complex, it's better to start from a copy of existing
 object:
 
-{% highlight php linenos startinline=true %}
+{% highlight php startinline=true %}
 final class Money 
 {
     private $amount;
@@ -165,7 +165,7 @@ final class Money
 
 Usage is the same as it was initially:
 
-{% highlight php linenos startinline=true %}
+{% highlight php startinline=true %}
 $userAmount = Money::USD(2);
 /**
  * Mark is going to send 2 USD to Alex. Since there's comission of 3%
@@ -193,7 +193,7 @@ very important to know and understand.
 
 We have a mutable class and want to have immutable object that uses it.
 
-{% highlight php linenos startinline=true %}
+{% highlight php startinline=true %}
 class MutableX
 {
     protected $y;
@@ -223,7 +223,7 @@ class Immutable
 Immutable class has getters only, the only property is assigned via constructor.
 Looks OK, right? Now let's use these:
 
-{% highlight php linenos startinline=true %}
+{% highlight php startinline=true %}
 $immutable = new Immutable(new MutableX());
 var_dump(md5(serialize($immutable))); // f48ac85e653586b6a972251a85dd6268
 
@@ -235,7 +235,7 @@ Object is still the same. State wasn't changed. Looks perfect!
 
 Not let's play with X a bit:
 
-{% highlight php linenos startinline=true %}
+{% highlight php startinline=true %}
 $immutable->getX()->setY(5);
 var_dump(md5(serialize($immutable))); // 8d390a0505c85aea084c8c0026c1621e
 {% endhighlight %}
@@ -252,7 +252,7 @@ with a collection of objects?
 
 First of all, let's implement a collection:
 
-{% highlight php linenos startinline=true %}
+{% highlight php startinline=true %}
 class Collection
 {
     protected $elements = [];
@@ -276,7 +276,7 @@ class Collection
 
 Now let's use it:
 
-{% highlight php linenos startinline=true %}
+{% highlight php startinline=true %}
 $immutable = new Immutable(new Collection([new XMutable(), new XMutable()]));
 var_dump(md5(serialize($immutable))); // 9d095d565a96740e175ae07f1192930f
 
@@ -290,7 +290,7 @@ var_dump(md5(serialize($immutable))); // 803b801abfa2a9882073eed4efe72fa0
 As we've already learned, having mutable objects inside immutable one is bad so let's
 replace mutable objects with scalars.
 
-{% highlight php linenos startinline=true %}
+{% highlight php startinline=true %}
 $immutable = new Immutable(new Collection([1, 2]));
 var_dump(md5(serialize($immutable))); // 24f1de7dc42cfa14ff46239b0274d54d
 
@@ -311,7 +311,7 @@ modify collection state in any other way.
 Another common case is about inheritance. We know that we should use getters only, instantiate via constructor and store immutable data only inside
 immutable object. Let's modify our `Immutable` class to only accept `Immutable` objects.
 
-{% highlight php linenos startinline=true %}
+{% highlight php startinline=true %}
 class Immutable
 {
     protected $x;
@@ -350,7 +350,7 @@ class Mutant extends Immutable
 }
 {% endhighlight %}
 
-{% highlight php linenos startinline=true %}
+{% highlight php startinline=true %}
 $mutant = new Mutant();
 $immutable = new Immutable($mutant);
 
