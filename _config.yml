@@ -10,7 +10,7 @@ title: Mark Ragazzo
 description: Domain Driven Design, Service Oriented Architecture, Event Driven Architecture, Distributed Systems
 url: "http://ragazzo.github.io"
 github_username:  Ragazzo
-highlighter: pygments
+highlighter: rouge
 markdown: kramdown
 paginate: 5
 gems:
