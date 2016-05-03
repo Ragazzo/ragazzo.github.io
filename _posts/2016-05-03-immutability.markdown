@@ -68,7 +68,7 @@ final class Address
         return $this->flat;
     }
 }
-```php
+```
 
 This object does not change its state after it was created and thus can be considered immutable.
 
