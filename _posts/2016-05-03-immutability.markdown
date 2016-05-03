@@ -37,7 +37,7 @@ So the benefits of using correctly implemented immutable objects are the followi
 
 Let's get to immutable object example:
 
-{% highlight php linenos startinline=true %}
+```php
 final class Address
 {
     private $city;
@@ -68,7 +68,7 @@ final class Address
         return $this->flat;
     }
 }
-{% endhighlight %}
+```php
 
 This object does not change its state after it was created and thus can be considered immutable.
 
