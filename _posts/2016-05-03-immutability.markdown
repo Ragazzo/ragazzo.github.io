@@ -38,6 +38,8 @@ So the benefits of using correctly implemented immutable objects are the followi
 Let's get to immutable object example:
 
 ```php
+<?php
+
 final class Address
 {
     private $city;
@@ -77,7 +79,9 @@ This object does not change its state after it was created and thus can be consi
 Now let's check a case of money transfer where lack of immutability leads to wrong result.
 We have `Money` class to represent a certain amount of money.
 
-{% highlight php startinline=true %}
+{% highlight php%}
+<?php
+
 class Money 
 {
     private $amount;
