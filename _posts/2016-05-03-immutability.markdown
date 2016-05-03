@@ -12,7 +12,7 @@ to use them.
 Immutable object is an object that does not change its state after it was created. Immutable objects
 usually are very simple. You may already seen them as enum types or primitives like `DateTimeImmutable`.
 
-Further in this article you will learn that making simple objects immutable may save singificant amount
+Further in this article you will learn that making simple objects immutable may save significant amount
 of your time by making impossible to make certain types of mistakes.
 
 When implementing immutable object you need to:
