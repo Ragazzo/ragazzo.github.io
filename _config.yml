@@ -12,6 +12,9 @@ url: "http://ragazzo.github.io"
 github_username:  Ragazzo
 highlighter: rouge
 markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
 paginate: 5
 gems:
   - jekyll-paginate
