@@ -331,7 +331,7 @@ class Immutable
 
 Looks OK... until someone extends your class:
 
-{% highlight php linenos startinline=true %}
+{% highlight php startinline=true %}
 class Mutant extends Immutable
 {
     public function __construct()
