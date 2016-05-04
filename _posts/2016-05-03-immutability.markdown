@@ -23,7 +23,7 @@ When implementing immutable object you need to:
 - do not store references to mutable objects or collections. If you store collection inside immutable object, it should be immutable too;
 - make sure that when you need to modify immutable object you make a copy instead of reusing existing one.
 
-Accidental side effects when changing object in one place results it beind unexpectedly changed in another place are quite hard to debug.
+Accidental side effects when changing object in one place results it being unexpectedly changed in another place are quite hard to debug.
 Such issues could be anywhere: in third party libraries, in language structures, etc. You can avoid these by using immutable object.
 
 So the benefits of using correctly implemented immutable objects are the following:
