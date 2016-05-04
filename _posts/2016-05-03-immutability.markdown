@@ -405,3 +405,6 @@ set of rules when implementing it:
 - avoid setters and use constructor to inject parameters;
 - do not store references to mutable objects or collections. If you store collection inside immutable object, it should be immutable too;
 - make sure that when you need to modify immutable object you make a copy instead of reusing existing one.
+
+
+> Authored by [Mark Ragazzo](https://github.com/Ragazzo), editorial by [Alexander Makarov](https://github.com/samdark).
