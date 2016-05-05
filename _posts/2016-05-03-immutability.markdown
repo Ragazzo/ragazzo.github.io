@@ -407,4 +407,4 @@ set of rules when implementing it:
 - make sure that when you need to modify immutable object you make a copy instead of reusing existing one.
 
 
-> Authored by [Mark Ragazzo](https://github.com/Ragazzo), editorial by [Alexander Makarov](https://github.com/samdark).
+> Authored by [Mark Ragazzo](https://github.com/Ragazzo), editorial by [Alexander Makarov](https://github.com/samdark) and [Vladimir Chub](https://github.com/ChubV).
